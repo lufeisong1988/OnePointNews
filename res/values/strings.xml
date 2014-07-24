@@ -9,4 +9,6 @@
     <string name="settings">设置</string>
     <string name="collection">收藏</string>
     <string name="offline">离线</string>
+    <string name="head_title">首页</string>
+    
 </resources>

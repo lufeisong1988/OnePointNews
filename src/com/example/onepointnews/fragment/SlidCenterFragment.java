@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.example.onepointnews.activity.MainActivity;
 import com.example.onepointnews.R;
@@ -34,7 +35,7 @@ import com.example.onepointnews.R;
 public class SlidCenterFragment extends Fragment {
 
 	private Button showLeft;
-	private Button showRight;
+	private LinearLayout showRight;
 	private MyAdapter mAdapter;
 	private ViewPager mPager;
 	private ArrayList<Fragment> pagerItemList = new ArrayList<Fragment>();
@@ -42,8 +43,8 @@ public class SlidCenterFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View mView = inflater.inflate(R.layout.slidcenter_viewpager, null);
-		showLeft = (Button) mView.findViewById(R.id.showLeft);
-		showRight = (Button) mView.findViewById(R.id.showRight);
+		showLeft = (Button) mView.findViewById(R.id.slidcenter_view_left);
+		showRight = (LinearLayout) mView.findViewById(R.id.slidcenter_view_right);
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
 		PageFragment1 page1 = new PageFragment1();
 //		PageFragment2 page2 = new PageFragment2();

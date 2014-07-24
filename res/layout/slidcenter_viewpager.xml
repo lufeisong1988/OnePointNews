@@ -5,27 +5,67 @@
     android:background="#fff" >
 
     <RelativeLayout
+        android:id="@+id/head_layout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/head_layout"
-        android:padding="5dip"
-        android:background="#fff" >
+        android:background="@drawable/list_top_bar" >
 
         <Button
-            android:id="@+id/showLeft"
+            android:id="@+id/slidcenter_view_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="ShowLeft" />
+            android:background="@drawable/center_left_bnt" />
 
-        <Button
-            android:id="@+id/showRight"
+        <LinearLayout
+            android:id="@+id/slidcenter_view_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/head_title"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/list_refresh" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/slidcenter_view_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_gravity="right"
-            android:text="ShowRight" />
-        
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:src="@drawable/center_right_bnt" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:gravity="center_vertical"
+                android:text="@string/explore"
+                android:textColor="@color/white"
+                android:textSize="15sp" >
+            </TextView>
+        </LinearLayout>
     </RelativeLayout>
 
     <android.support.v4.view.ViewPager
