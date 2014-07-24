@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mlist"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_deep" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/left_buttom"
+        android:background="@color/bg_color_deep"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_personal_bg"
+            android:padding="10dip" >
+
+            <ImageView
+                android:id="@+id/left_head_iv"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/head_default" />
+
+            <TextView
+                android:id="@+id/left_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/left_head_iv"
+                android:text="@string/enter_tip"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="2px"
+            layout="@layout/line" >
+        </include>
+
+        <ListView
+            android:listSelector="#00000000"
+            android:background="@null"
+            android:id="@+id/left_themeLv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/left_buttom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ff25272a"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/left_explore"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="22.0dip"
+                android:layout_height="22.0dip"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="8.0dip"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_buttom_bnt1" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="5.0dip"
+                android:background="@null"
+                android:text="@string/explore"
+                android:textColor="@drawable/left_buttom_tv"
+                android:textSize="11.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/left_collection"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="22.0dip"
+                android:layout_height="22.0dip"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="8.0dip"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_buttom_bnt2" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="5.0dip"
+                android:background="@null"
+                android:text="@string/collection"
+                android:textColor="@drawable/left_buttom_tv"
+                android:textSize="11.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/left_offline"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="22.0dip"
+                android:layout_height="22.0dip"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="8.0dip"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_buttom_bnt3" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="5.0dip"
+                android:background="@null"
+                android:text="@string/offline"
+                android:textColor="@drawable/left_buttom_tv"
+                android:textSize="11.0sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/left_setting"
+            android:layout_width="0.0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="22.0dip"
+                android:layout_height="22.0dip"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="8.0dip"
+                android:background="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_buttom_bnt4" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="5.0dip"
+                android:background="@null"
+                android:text="@string/settings"
+                android:textColor="@drawable/left_buttom_tv"
+                android:textSize="11.0sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
