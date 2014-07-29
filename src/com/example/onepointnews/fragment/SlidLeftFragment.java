@@ -25,12 +25,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.onepointnews.R;
+import com.example.onepointnews.activity.MainActivity;
 import com.example.onepointnews.adapter.SlidLeftThemeAdapter;
 
 public class SlidLeftFragment extends Fragment implements OnClickListener{
@@ -44,6 +47,9 @@ public class SlidLeftFragment extends Fragment implements OnClickListener{
 	
 	private SlidLeftThemeAdapter adapter;
 	private ArrayList<String> themeNameList = new ArrayList<String>();
+	public SlidLeftFragment(){
+		
+	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.slidleft, null);
@@ -88,6 +94,15 @@ public class SlidLeftFragment extends Fragment implements OnClickListener{
 		
 		adapter = new SlidLeftThemeAdapter(getActivity(), themeNameList);
 		themeLv.setAdapter(adapter);
+		themeLv.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				((MainActivity)getActivity()).showCenter(themeNameList.get(arg2));
+				
+			}
+		});
 	}
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);

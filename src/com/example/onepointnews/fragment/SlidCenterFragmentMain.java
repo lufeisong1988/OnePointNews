@@ -35,10 +35,16 @@ public class SlidCenterFragmentMain extends Fragment {
 	private LinearLayout title;
 	private LinkedList<String> mListItems;
 
-	// The data to be displayed in the ListView
 	private String[] mNames = { "Fabian", "Carlos", "Alex", "Andrea", "Karla",
 			"Freddy", "Lazaro", "Hector", "Carolina", "Edwin", "Jhon",
 			"Edelmira", "Andres" };
+	private String[] mAges = { "1", "2", "3", "4", "5",
+			"6", "7", "8", "9", "10", "11",
+			"12", "13" };
+	private ArrayAdapter<String> adapter;
+	public SlidCenterFragmentMain(){
+		
+	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.slidcenter_main, null);
@@ -56,10 +62,19 @@ public class SlidCenterFragmentMain extends Fragment {
 		mListItems = new LinkedList<String>();
 		mListItems.addAll(Arrays.asList(mNames));
 
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+		adapter = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_list_item_1, mListItems);
 
 		lv.setAdapter(adapter);
+	}
+	public void notiftData(int i ){
+		mListItems.clear();
+		if(i % 2 == 0 ){
+			mListItems.addAll(Arrays.asList(mNames));
+		}else{
+			mListItems.addAll(Arrays.asList(mAges));
+		}
+		adapter.notifyDataSetChanged();
 	}
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);

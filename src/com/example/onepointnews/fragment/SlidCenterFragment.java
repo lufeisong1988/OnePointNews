@@ -17,41 +17,56 @@ package com.example.onepointnews.fragment;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.onepointnews.activity.MainActivity;
 import com.example.onepointnews.R;
 
 public class SlidCenterFragment extends Fragment {
-
+	private TextView title;
 	private Button showLeft;
 	private LinearLayout showRight;
 	private MyAdapter mAdapter;
 	private ViewPager mPager;
+	private String titleName = "Ê×Ò³";
+	private String urlStr = "http";
 	private ArrayList<Fragment> pagerItemList = new ArrayList<Fragment>();
-
+	private SlidCenterFragmentMain page1;
+	public SlidCenterFragment(){
+		
+	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View mView = inflater.inflate(R.layout.slidcenter, null);
+		initView(mView);
+		listener();
+		return mView;
+	}
+	void initView(View mView){
+		title = (TextView) mView.findViewById(R.id.slidcenter_title);
 		showLeft = (Button) mView.findViewById(R.id.slidcenter_view_left);
 		showRight = (LinearLayout) mView.findViewById(R.id.slidcenter_view_right);
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
-		SlidCenterFragmentMain page1 = new SlidCenterFragmentMain();
-//		PageFragment2 page2 = new PageFragment2();
+		page1 = new SlidCenterFragmentMain();
 		pagerItemList.add(page1);
-		//pagerItemList.add(page2);
 		mAdapter = new MyAdapter(getFragmentManager());
 		mPager.setAdapter(mAdapter);
+		title.setText(titleName);
+	}
+	void listener(){
 		mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
 			@Override
@@ -76,9 +91,14 @@ public class SlidCenterFragment extends Fragment {
 			}
 		});
 
-		return mView;
-	}
 
+	}
+	public void setData(String titleName,String urlStr){
+		this.titleName = titleName;
+		this.urlStr = urlStr;
+		title.setText(titleName);
+		page1.notiftData(Integer.parseInt(titleName));
+	}
 	public void onActivityCreated(Bundle savedInstanceState) {
 
 		super.onActivityCreated(savedInstanceState);

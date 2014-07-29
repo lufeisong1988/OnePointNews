@@ -14,10 +14,15 @@
  * limitations under the License.
  */
 package com.example.onepointnews.activity;
-
+/**
+ * Ö÷½çÃæ 
+ */
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.onepointnews.fragment.SlidLeftFragment;
 import com.example.onepointnews.fragment.SlidRightFragment;
@@ -31,17 +36,17 @@ public class MainActivity extends FragmentActivity {
 	SlidLeftFragment leftFragment;
 	SlidRightFragment rightFragment;
 	SlidCenterFragment viewPageFragment;
-
+	FragmentTransaction t;
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
 		setContentView(R.layout.main);
-		init();
+		initView();
 		initListener();
 
 	}
 
-	private void init() {
+	private void initView() {
 		mSlidingMenu = (SlidingMenu) findViewById(R.id.slidingMenu);
 		mSlidingMenu.setLeftView(getLayoutInflater().inflate(
 				R.layout.slidleft_frame, null));
@@ -50,8 +55,7 @@ public class MainActivity extends FragmentActivity {
 		mSlidingMenu.setCenterView(getLayoutInflater().inflate(
 				R.layout.slidcenter_frame, null));
 
-		FragmentTransaction t = this.getSupportFragmentManager()
-				.beginTransaction();
+		t = this.getSupportFragmentManager().beginTransaction();
 		leftFragment = new SlidLeftFragment();
 		t.replace(R.id.left_frame, leftFragment);
 
@@ -86,5 +90,10 @@ public class MainActivity extends FragmentActivity {
 	public void showRight() {
 		mSlidingMenu.showRightView();
 	}
-
+	public void showCenter(String titleName){
+		mSlidingMenu.showLeftView();
+		viewPageFragment.setData(titleName,"http");
+//		t.replace(R.id.center_frame, viewPageFragment);
+//		t.commit();
+	}
 }

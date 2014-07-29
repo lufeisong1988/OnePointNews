@@ -17,21 +17,32 @@ package com.example.onepointnews.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+
 import com.example.onepointnews.R;
 
 public class SlidRightFragment extends Fragment {
-
+	public SlidRightFragment(){
+		
+	}
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.slidright, null);
+		initParams(view);
 		return view;
 	}
-
+	
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 	}
-
+	void initParams(View view){
+		float scale = this.getResources().getDisplayMetrics().density;
+		DisplayMetrics dm = new DisplayMetrics();
+		this.getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+		view.setLayoutParams(new LayoutParams(dm.widthPixels - (int)(0.0 * scale + 0.5f), dm.heightPixels));
+	}
 }

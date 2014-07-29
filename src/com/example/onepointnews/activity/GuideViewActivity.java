@@ -1,5 +1,7 @@
 package com.example.onepointnews.activity;
-
+/**
+ * 引导界面
+ */
 import java.util.ArrayList;
 import java.util.List;
 
