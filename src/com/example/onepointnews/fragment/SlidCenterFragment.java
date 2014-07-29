@@ -42,11 +42,11 @@ public class SlidCenterFragment extends Fragment {
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View mView = inflater.inflate(R.layout.slidcenter_viewpager, null);
+		View mView = inflater.inflate(R.layout.slidcenter, null);
 		showLeft = (Button) mView.findViewById(R.id.slidcenter_view_left);
 		showRight = (LinearLayout) mView.findViewById(R.id.slidcenter_view_right);
 		mPager = (ViewPager) mView.findViewById(R.id.pager);
-		PageFragment1 page1 = new PageFragment1();
+		SlidCenterFragmentMain page1 = new SlidCenterFragmentMain();
 //		PageFragment2 page2 = new PageFragment2();
 		pagerItemList.add(page1);
 		//pagerItemList.add(page2);

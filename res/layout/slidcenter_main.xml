@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color" >
+
+    <LinearLayout
+        android:id="@+id/slidcenter_main_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slidcenter_title"
+            android:padding="3dp"
+            android:textSize="15sp" >
+        </TextView>
+    </LinearLayout>
+
+    <com.example.onepointnews.view.PullAndLoadListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/slidcenter_main_title" >
+    </com.example.onepointnews.view.PullAndLoadListView>
+
+</RelativeLayout>
