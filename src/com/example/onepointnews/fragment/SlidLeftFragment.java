@@ -17,6 +17,7 @@ package com.example.onepointnews.fragment;
 
 import java.util.ArrayList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
@@ -33,6 +34,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.onepointnews.R;
+import com.example.onepointnews.activity.CollectionActivity;
 import com.example.onepointnews.activity.MainActivity;
 import com.example.onepointnews.adapter.SlidLeftThemeAdapter;
 
@@ -114,6 +116,9 @@ public class SlidLeftFragment extends Fragment implements OnClickListener{
 		case R.id.left_explore:
 			break;
 		case R.id.left_collection:
+			Intent intent = new Intent(((MainActivity)getActivity()),CollectionActivity.class);
+			startActivity(intent);
+			((MainActivity)getActivity()).overridePendingTransition(R.anim.show_to_left, R.anim.keep_state);
 			break;
 		case R.id.left_offline:
 			break;
