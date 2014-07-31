@@ -18,7 +18,6 @@ package com.example.onepointnews.view;
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -91,22 +90,22 @@ public class SlidingMenu extends RelativeLayout {
 
 	public void setLeftView(View view) {
 		LayoutParams behindParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
-				LayoutParams.FILL_PARENT);
+				LayoutParams.MATCH_PARENT);
 		addView(view, behindParams);
 		mMenuView = view;
 	}
 
 	public void setRightView(View view) {
 		LayoutParams behindParams = new LayoutParams(LayoutParams.WRAP_CONTENT,
-				LayoutParams.FILL_PARENT);
+				LayoutParams.MATCH_PARENT);
 		behindParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
 		addView(view, behindParams);
 		mDetailView = view;
 	}
 
 	public void setCenterView(View view) {
-		LayoutParams aboveParams = new LayoutParams(LayoutParams.FILL_PARENT,
-				LayoutParams.FILL_PARENT);
+		LayoutParams aboveParams = new LayoutParams(LayoutParams.MATCH_PARENT,
+				LayoutParams.MATCH_PARENT);
 
 		LayoutParams bgParams = new LayoutParams(screenWidth, screenHeight);
 		bgParams.addRule(RelativeLayout.CENTER_IN_PARENT);

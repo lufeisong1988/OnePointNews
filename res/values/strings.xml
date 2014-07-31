@@ -17,5 +17,9 @@
     <string name="slidcenter_title">选择兴趣，让你的新闻立即与众不同   >  </string>
 	 <string name="guideview_item_bnt_text">点击进入 </string>
 	 <string name="my_collection_tip">我都收藏（0）</string>
-	 
+	  <string name="sina_enter">新浪用户登录</string>
+	  <string name="weibo_enter">微博用户登录</string>
+	    <string name="qq_enter">QQ用户登录</string>
+	    <string name="register">新用户注册</string>
+	    <string name="back">返回</string>
 </resources>

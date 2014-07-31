@@ -20,9 +20,6 @@ package com.example.onepointnews.activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.onepointnews.fragment.SlidLeftFragment;
 import com.example.onepointnews.fragment.SlidRightFragment;
@@ -93,7 +90,5 @@ public class MainActivity extends FragmentActivity {
 	public void showCenter(String titleName){
 		mSlidingMenu.showLeftView();
 		viewPageFragment.setData(titleName,"http");
-//		t.replace(R.id.center_frame, viewPageFragment);
-//		t.commit();
 	}
 }

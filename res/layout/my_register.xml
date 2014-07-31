@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/list_top_bar" >
+
+        <ImageButton
+            android:id="@+id/my_register_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/collection_back" />
+
+        <TextView
+            android:id="@+id/collection_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/my_register_back"
+            android:text="@string/back"
+            android:textColor="@color/white" >
+        </TextView>
+    </RelativeLayout>
+
+</LinearLayout>

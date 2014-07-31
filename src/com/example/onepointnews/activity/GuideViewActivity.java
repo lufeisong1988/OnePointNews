@@ -36,7 +36,7 @@ public class GuideViewActivity extends Activity implements OnClickListener,OnPag
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.guideview);
+		setContentView(R.layout.login_guideview);
 		initView();
 		initDots();
 		initData();
@@ -61,7 +61,7 @@ public class GuideViewActivity extends Activity implements OnClickListener,OnPag
 	}
 	void initData(){
 		for(int i = 0;i < imgs.length;i++){
-			View view = LayoutInflater.from(this).inflate(R.layout.guideview_item, null);
+			View view = LayoutInflater.from(this).inflate(R.layout.login_guideview_item, null);
 			iv = (ImageView) view.findViewById(R.id.guideview_item_iv);
 			bnt = (Button) view.findViewById(R.id.guideview_item_bnt);
 			iv.setBackgroundResource(imgs[i]);
@@ -122,7 +122,7 @@ public class GuideViewActivity extends Activity implements OnClickListener,OnPag
 		
 		@Override
 		public void onClick(View v) {
-			startActivity(new Intent(GuideViewActivity.this,MainActivity.class));
+			startActivity(new Intent(GuideViewActivity.this,SelectLoginActivity.class));
 			GuideViewActivity.this.finish();
 		}
 	};

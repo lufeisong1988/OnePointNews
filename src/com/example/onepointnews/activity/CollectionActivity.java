@@ -13,7 +13,7 @@ public class CollectionActivity extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.collection);
+		setContentView(R.layout.my_collection);
 		initView();
 		listener();
 	}
